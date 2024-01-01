@@ -1,6 +1,6 @@
 import React from "react";
 import "./recipe.css";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const Recipe = () => {
   const location = useLocation();
@@ -44,14 +44,21 @@ const Recipe = () => {
             ))}
           </ul>
         </div>
-        
+
         <a
           href={recipe.url}
           target="_blank"
-          className="button bg-orange-600 px-5 py-2 mt-3 mb-3 text-white font-semibold rounded-lg hover:bg-orange-500 "
+          rel="noreferrer"
+          className="button bg-orange-600 w-[200px] px-5 py-2 mt-3 mb-3 text-white font-semibold rounded-lg  text-center hover:bg-orange-500 "
         >
           To See Full Recipe
         </a>
+        <Link
+          to={-1}
+          className="text-orange-600  border-2 hover:border-none font-semibold border-orange-600 px-5 w-[200px] py-2 hover:text-white hover:bg-orange-500 rounded-lg  transition  text-center duration-300 ease-in-out mb-4" 
+        >
+          Go Back
+        </Link>
       </div>
     </div>
   );
