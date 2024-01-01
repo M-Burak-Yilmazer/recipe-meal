@@ -3505,7 +3505,7 @@ axe-core@=4.7.0:
 
 axios@^1.6.3:
   version "1.6.3"
-  resolved "https://registry.npmjs.org/axios/-/axios-1.6.3.tgz"
+  resolved "https://registry.yarnpkg.com/axios/-/axios-1.6.3.tgz#7f50f23b3aa246eff43c54834272346c396613f4"
   integrity sha512-fWyNdeawGam70jXSVlKl+SUNVcL6j6W79CuSIPfi6HnDUmSCH6gyUys/HrqHeA/wU0Az41rRgean494d0Jb+ww==
   dependencies:
     follow-redirects "^1.15.0"
@@ -5761,15 +5761,7 @@ flowbite-react@^0.7.2:
     sharp "^0.32.6"
     tailwind-merge "^2.0.0"
 
-flowbite@^2.0.0:
-  version "2.2.1"
-  resolved "https://registry.npmjs.org/flowbite/-/flowbite-2.2.1.tgz"
-  integrity sha512-iiZyBTtriEDRHrqXZgpKHaxl4B2J8HZUP8Yn1RXozUDKszWHDVj4GxQqMMB9AJHRWOgXV/4E/LJZ/zqQgBUhWA==
-  dependencies:
-    "@popperjs/core" "^2.9.3"
-    mini-svg-data-uri "^1.4.3"
-
-flowbite@^2.2.1:
+flowbite@^2.0.0, flowbite@^2.2.1:
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/flowbite/-/flowbite-2.2.1.tgz#9e22be9ff746bccb9fcf87979bbc5e41a16eaf7a"
   integrity sha512-iiZyBTtriEDRHrqXZgpKHaxl4B2J8HZUP8Yn1RXozUDKszWHDVj4GxQqMMB9AJHRWOgXV/4E/LJZ/zqQgBUhWA==
