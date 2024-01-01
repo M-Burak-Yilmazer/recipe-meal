@@ -46,7 +46,7 @@ export const Login = () => {
                 </div>
                 <div className="text-right mt-2">
                   <a
-                    href="#"
+                    href="#drive"
                     className="text-sm font-semibold text-gray-700 hover:text-blue-700 focus:text-blue-700"
                   >
                     Forgot Password?
@@ -108,7 +108,7 @@ export const Login = () => {
               <p className="mt-8">
                 Need an account?{" "}
                 <a
-                  href="#"
+                  href="#drive"
                   className="text-blue-500 hover:text-blue-700 font-semibold"
                 >
                   Create an account

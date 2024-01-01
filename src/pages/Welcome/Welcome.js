@@ -10,8 +10,8 @@ const navigate=useNavigate()
           Finding Recipes
         </h1>
         <h1 className="text-3xl text-slate-100 font-semibold hidden sm:block">
-          {" "}
-          Cooking a Delicious Food{" "}
+          
+          Cooking a Delicious Food
         </h1>
         <p className="text-slate-300 text-sm mb-2 hidden sm:block">
           Discover more than 1200 food in your hands and cooking it easily.
