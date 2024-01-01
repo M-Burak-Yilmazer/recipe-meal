@@ -1,7 +1,18 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import "./register.css";
+import { AuthContext } from "../../context/AuthProvider";
 
 const Register = () => {
+  const [userName, setUserName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const { createUser, signUpProvider } = useContext(AuthContext);
+
+  const handleRegister = (e) => {
+    e.preventDefault();
+    const displayName = userName;
+    createUser(email, password, displayName);
+  };
   return (
     <div>
       <>
@@ -9,7 +20,10 @@ const Register = () => {
           {/* component */}
           <div className="h-min-[100vh] md:flex login ">
             <div className="flex h-screen md:w-1/2 justify-center py-10 items-center">
-              <form className="bg-[rgba(255,255,255,0.7)]  p-5 rounded-xl">
+              <form
+                onSubmit={handleRegister}
+                className="bg-[rgba(255,255,255,0.7)]  p-5 rounded-xl"
+              >
                 <h1 className="text-gray-800 font-bold text-2xl mb-1">
                   🔪 Sign Up Form 🔪
                 </h1>
@@ -32,7 +46,7 @@ const Register = () => {
                   <input
                     className="pl-2 outline-none placeholder-red-500 bg-transparent border-none"
                     type="text"
-                    name=""
+                    name="name"
                     id=""
                     placeholder="Full name"
                   />
@@ -55,9 +69,12 @@ const Register = () => {
                   <input
                     className="pl-2 outline-none placeholder-red-500 bg-transparent border-none"
                     type="text"
-                    name=""
+                    name="userName"
                     id=""
                     placeholder="Username"
+                    required
+                    value={userName}
+                    onChange={(e) => setUserName(e.target.value)}
                   />
                 </div>
                 <div className="flex items-center border-2 py-2 px-3 rounded-2xl mb-4">
@@ -77,10 +94,13 @@ const Register = () => {
                   </svg>
                   <input
                     className="pl-2 outline-none placeholder-red-500 bg-transparent border-none "
-                    type="text"
-                    name=""
+                    type="email"
+                    name="email"
                     id=""
                     placeholder="Email Address"
+                    required
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
                   />
                 </div>
                 <div className="flex items-center border-2 py-2 px-3 rounded-2xl">
@@ -98,10 +118,13 @@ const Register = () => {
                   </svg>
                   <input
                     className="pl-2 outline-none placeholder-red-500 bg-transparent border-none"
-                    type="text"
-                    name=""
+                    type="password"
+                    name="password"
                     id=""
                     placeholder="Password"
+                    value={password}
+                    required
+                    onChange={(e) => setPassword(e.target.value)}
                   />
                 </div>
                 <button
@@ -111,7 +134,8 @@ const Register = () => {
                   Register
                 </button>
                 <button
-                  type="button"
+                  onClick={signUpProvider}
+                  type="submit"
                   className="w-full block text-white mb-2 bg-gradient-to-r from-pink-400 via-pink-500 to-pink-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-pink-300 dark:focus:ring-pink-800  font-semibold rounded-xl px-4 py-3 "
                 >
                   <div className="flex items-center justify-center">
@@ -154,9 +178,6 @@ const Register = () => {
                     <span className="ml-4">Register with Google</span>
                   </div>
                 </button>
-                <span className="text-sm ml-2 text-red-500 hover:text-blue-500 cursor-pointer">
-                  Forgot Password ?
-                </span>
               </form>
             </div>
           </div>

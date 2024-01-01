@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 const SearchDetail = ({ item }) => {
   const navigate = useNavigate();
   return (
-    <div className="cursor-pointer rounded overflow-hidden w-[400px] h-[550px] shadow-lg flex flex-col bg-orange-200">
+    <div className="cursor-pointer rounded overflow-hidden w-[300px] h-[450px] shadow-lg flex flex-col bg-orange-200">
       <div
         className="relative"
         onClick={() => navigate("/recipe", { state: { from: item } })}
@@ -26,13 +26,13 @@ const SearchDetail = ({ item }) => {
       <div className="px-6 py-3 flex flex-row items-center justify-between bg-gray-100">
         <span
           href="#"
-          className="py-1 text-xs font-regular text-gray-900 mr-1 flex flex-row items-center"
+          className="py-1 text-xs font-regular text-gray-900 mr-1 flex flex-row justify-between items-center"
         >
           <span className="ml-1">Source : {item.recipe.source}</span>
         </span>
         <span
           href="#"
-          className="py-1 text-xs font-regular text-gray-900 mr-1 flex flex-row items-center"
+          className="py-1 text-xs font-regular text-gray-900 mr-1 flex flex-row justify-between items-center"
         >
           <svg
             className="h-5"

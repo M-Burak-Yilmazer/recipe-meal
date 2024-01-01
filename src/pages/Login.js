@@ -1,10 +1,18 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import image from "../cook-1375797_1280.jpg";
+import { Link } from "react-router-dom";
+import { AuthContext } from "../context/AuthProvider";
 export const Login = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const { signIn, signUpProvider, forgotPassword } = useContext(AuthContext);
+  const handleLogin = (e) => {
+    e.preventDefault();
+    signIn(email, password);
+  };
   return (
     <div>
       <>
-        {/* component */}
         <section className="flex flex-col md:flex-row h-screen items-center">
           <div className=" hidden lg:block w-full md:w-1/2 xl:w-2/3 h-screen">
             <img src={image} alt="" className="w-full h-full object-cover" />
@@ -17,40 +25,49 @@ export const Login = () => {
               <h1 className="text-xl md:text-2xl font-bold leading-tight mt-12">
                 Log in to your account
               </h1>
-              <form className="mt-6" action="#" method="POST">
+              <form
+                onSubmit={handleLogin}
+                className="mt-6"
+                action="#"
+                method="POST"
+              >
                 <div>
                   <label className="block text-gray-700">Email Address</label>
                   <input
                     type="email"
-                    name=""
+                    name="email"
                     id=""
                     placeholder="Enter Email Address"
                     className="w-full px-4 py-3 rounded-lg bg-gray-200 mt-2 border focus:border-blue-500 focus:bg-white focus:outline-none"
                     autofocus=""
                     autoComplete=""
-                    required=""
+                    required
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
                   />
                 </div>
                 <div className="mt-4">
                   <label className="block text-gray-700">Password</label>
                   <input
                     type="password"
-                    name=""
+                    name="password"
                     id=""
                     placeholder="Enter Password"
                     minLength={6}
                     className="w-full px-4 py-3 rounded-lg bg-gray-200 mt-2 border focus:border-blue-500
           focus:bg-white focus:outline-none"
-                    required=""
+                    required
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
                   />
                 </div>
                 <div className="text-right mt-2">
-                  <a
-                    href="#drive"
+                  <span
+                    onClick={() => forgotPassword(email)}
                     className="text-sm font-semibold text-gray-700 hover:text-blue-700 focus:text-blue-700"
                   >
                     Forgot Password?
-                  </a>
+                  </span>
                 </div>
                 <button
                   type="submit"
@@ -106,13 +123,13 @@ export const Login = () => {
                 </div>
               </button>
               <p className="mt-8">
-                Need an account?{" "}
-                <a
-                  href="#drive"
+                Need an account?
+                <Link
+                  to="/register"
                   className="text-blue-500 hover:text-blue-700 font-semibold"
                 >
                   Create an account
-                </a>
+                </Link>
               </p>
             </div>
           </div>
