@@ -1,5 +1,5 @@
 import React from "react";
-import "./Login.css";
+import "./register.css";
 
 const Register = () => {
   return (
@@ -9,9 +9,9 @@ const Register = () => {
           {/* component */}
           <div className="h-min-[100vh] md:flex login ">
             <div className="flex h-screen md:w-1/2 justify-center py-10 items-center">
-              <form className="bg-[rgba(255,255,255,0.7)]  p-3 rounded-xl">
+              <form className="bg-[rgba(255,255,255,0.7)]  p-5 rounded-xl">
                 <h1 className="text-gray-800 font-bold text-2xl mb-1">
-                  Sign Up Form
+                  🔪 Sign Up Form 🔪
                 </h1>
                 <p className="text-sm font-normal text-gray-600 mb-7">
                   Hello Again !
@@ -106,9 +106,53 @@ const Register = () => {
                 </div>
                 <button
                   type="submit"
-                  className="block w-full bg-indigo-600 mt-4 py-2 rounded-2xl text-white font-semibold mb-2"
+                  className="block w-full bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 mt-4 py-2 rounded-xl text-white font-semibold mb-2"
                 >
-                  Login
+                  Register
+                </button>
+                <button
+                  type="button"
+                  className="w-full block text-white mb-2 bg-gradient-to-r from-pink-400 via-pink-500 to-pink-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-pink-300 dark:focus:ring-pink-800  font-semibold rounded-xl px-4 py-3 "
+                >
+                  <div className="flex items-center justify-center">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      xmlnsXlink="http://www.w3.org/1999/xlink"
+                      className="w-6 h-6"
+                      viewBox="0 0 48 48"
+                    >
+                      <defs>
+                        <path
+                          id="a"
+                          d="M44.5 20H24v8.5h11.8C34.7 33.9 30.1 37 24 37c-7.2 0-13-5.8-13-13s5.8-13 13-13c3.1 0 5.9 1.1 8.1 2.9l6.4-6.4C34.6 4.1 29.6 2 24 2 11.8 2 2 11.8 2 24s9.8 22 22 22c11 0 21-8 21-22 0-1.3-.2-2.7-.5-4z"
+                        />
+                      </defs>
+                      <clipPath id="b">
+                        <use xlinkHref="#a" overflow="visible" />
+                      </clipPath>
+                      <path
+                        clipPath="url(#b)"
+                        fill="#FBBC05"
+                        d="M0 37V11l17 13z"
+                      />
+                      <path
+                        clipPath="url(#b)"
+                        fill="#EA4335"
+                        d="M0 11l17 13 7-6.1L48 14V0H0z"
+                      />
+                      <path
+                        clipPath="url(#b)"
+                        fill="#34A853"
+                        d="M0 37l30-23 7.9 1L48 0v48H0z"
+                      />
+                      <path
+                        clipPath="url(#b)"
+                        fill="#4285F4"
+                        d="M48 48L17 24l-4-3 35-10z"
+                      />
+                    </svg>
+                    <span className="ml-4">Register with Google</span>
+                  </div>
                 </button>
                 <span className="text-sm ml-2 text-red-500 hover:text-blue-500 cursor-pointer">
                   Forgot Password ?
