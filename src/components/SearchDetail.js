@@ -1,11 +1,16 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const SearchDetail = ({ item }) => {
+  const navigate = useNavigate();
   return (
-    <div className="rounded overflow-hidden w-[400px] h-[550px] shadow-lg flex flex-col bg-orange-200">
-      <div className="relative">
+    <div className="cursor-pointer rounded overflow-hidden w-[400px] h-[550px] shadow-lg flex flex-col bg-orange-200">
+      <div
+        className="relative"
+        onClick={() => navigate("/recipe", { state: { from: item } })}
+      >
         <img
-          className="w-full"
+          className="w-full "
           src={item.recipe.image}
           alt="Sunset in the mountains"
         />

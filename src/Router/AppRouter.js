@@ -6,6 +6,7 @@ import Register from "../pages/Login/Register";
 import { Login } from "../pages/Login";
 import PrivateRouter from "./PrivateRouter";
 import Home from "../pages/Home";
+import Recipe from "../pages/Recipe";
 
 const AppRouter = () => {
   return (
@@ -15,7 +16,8 @@ const AppRouter = () => {
         <Route path="/register" element={<Register />} />
 
         <Route path="/" element={<PrivateRouter />}>
-            <Route path="" element={<Home/>} />
+          <Route path="" element={<Home />} />
+          <Route path="recipe" element={<Recipe />} />
         </Route>
 
         <Route path="/login" element={<Login />} />

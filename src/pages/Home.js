@@ -48,7 +48,7 @@ const Home = () => {
             Your Email
           </label>
 
-          <div className=" w-full flex gap-2">
+          <div className=" w-full outline  outline-4   outline-offset-[7px] rounded outline-cyan-700  flex gap-2">
             <select
               value={select}
               onChange={(e) => setSelect(e.target.value)}
