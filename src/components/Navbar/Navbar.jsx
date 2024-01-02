@@ -30,7 +30,7 @@ const Navbar = () => {
           onClick={() => handleLogoClick()}
         >
           <img className="h-10 md:h-12" src={nav} alt="" />
-          <div className="flex flex-col hidden sm:block  ">
+          <div className="hidden sm:flex flex-col   ">
             <span className="text-red-600 text-xl font-semibold font-serif">
               Delicious
             </span>
@@ -68,7 +68,7 @@ const Navbar = () => {
               }}
             >
               <img className="h-10 md:h-12" src={nav1} alt="" />
-              <span className="font-semibold text-base hidden sn:block">Logout</span>
+              <span className="font-semibold text-base hidden sm:block">Logout</span>
             </li>
           </ul>
         </nav>
