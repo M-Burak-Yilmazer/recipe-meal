@@ -8,7 +8,7 @@ const Recipe = () => {
   console.log(recipe);
   return (
     <div className="bg-gradient-to-r from-indigo-200 via-red-200 to-yellow-100 recipe rounded-lg ">
-      <div className="recipeDiv w-[50vw] rounded-lg  mx-auto ">
+      <div className="recipeDiv  md:w-[50vw] rounded-lg  mx-auto ">
         <h1 className="text-2xl md:text-4xl font-semibold capitalize px-3 mb-3">
           {recipe.label}
         </h1>

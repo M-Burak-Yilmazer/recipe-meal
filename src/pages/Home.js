@@ -42,7 +42,7 @@ const Home = () => {
           : "home"
       }
     >
-      <form onSubmit={handleSubmit} className="container w-[50%] mx-auto pt-5 ">
+      <form onSubmit={handleSubmit} className="container w-[95%] md:w-[50%] mx-auto pt-5 ">
         <div className="flex">
           <label
             htmlFor="location-search"
@@ -51,7 +51,7 @@ const Home = () => {
             Your Email
           </label>
 
-          <div className=" w-full outline  outline-4   outline-offset-[7px] rounded outline-orange-600   flex gap-2">
+          <div className=" w-full  md:outline outline-4   outline-offset-[7px] rounded outline-orange-600   flex gap-2">
             <select
               value={select}
               ref={inputRef}
@@ -60,7 +60,7 @@ const Home = () => {
               className="bg-orange-600  text-white  font-semibold text-sm rounded-lg focus:bg-orange-500 focus:border-orange-500  block  p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-orange-600 dark:focus:border-orange-600 "
             >
               <option disabled value="">
-                Select a Meal/Type
+             Meal/Type
               </option>
               <option value="Breakfast">Breakfast</option>
               <option selected value="Lunch">

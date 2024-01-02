@@ -23,14 +23,14 @@ const Navbar = () => {
   };
   return (
     <header className="bg-gradient-to-r from-rose-100 to-teal-100">
-      <div className=" mx-auto  px-10 py-2 flex justify-between items-center">
+      <div className="   px-10 py-2 flex  justify-between items-center gap-3">
         {/* logo */}
         <div
           className="flex cursor-pointer items-center gap-5 flex-shrink-0"
           onClick={() => handleLogoClick()}
         >
           <img className="h-10 md:h-12" src={nav} alt="" />
-          <div className="flex flex-col ">
+          <div className="flex flex-col hidden sm:block  ">
             <span className="text-red-600 text-xl font-semibold font-serif">
               Delicious
             </span>
@@ -46,7 +46,7 @@ const Navbar = () => {
         {/* buttons */}
         <nav className="contents">
           <ul className=" flex items-center gap-2 justify-end">
-            <li>
+            <li className="hidden sm:block">
               {currentUser && (
                 <span className="font-semibold text-base">
                   {currentUser?.displayName}
@@ -68,7 +68,7 @@ const Navbar = () => {
               }}
             >
               <img className="h-10 md:h-12" src={nav1} alt="" />
-              <span className="font-semibold text-base">Logout</span>
+              <span className="font-semibold text-base hidden sn:block">Logout</span>
             </li>
           </ul>
         </nav>

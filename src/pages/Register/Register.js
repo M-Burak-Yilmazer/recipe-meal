@@ -24,10 +24,10 @@ const Register = () => {
                 onSubmit={handleRegister}
                 className="bg-[rgba(255,255,255,0.7)]  p-5 rounded-xl"
               >
-                <h1 className="text-gray-800 font-bold text-2xl mb-1">
+                <h1 className="font-bold text-2xl text-orange-500 mb-1">
                   🔪 Sign Up Form 🔪
                 </h1>
-                <p className="text-sm font-normal text-gray-600 mb-7">
+                <p className="text-md text-orange-500 font-normal  mb-7 text-center">
                   Hello Again !
                 </p>
                 <div className="flex items-center border-2 py-2 px-3 rounded-2xl mb-4">
