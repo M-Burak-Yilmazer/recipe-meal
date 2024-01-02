@@ -1,20 +1,33 @@
 import React, { useContext } from "react";
 import nav from "../../cooking.png";
 import nav1 from "../../icons8-logout-64.png";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/AuthProvider";
 import avatar from "../../avatar.png";
 
 const Navbar = () => {
   const { logOut, currentUser } = useContext(AuthContext);
+
   const navigate = useNavigate();
+
+  const location = useLocation();
+
+  const handleLogoClick = () => {
+    // Eğer /dashboard içindeyken sayfayı yeniden yükle
+    if (location.pathname === "/dashboard") {
+      window.location.reload();
+    } else {
+      // Değilse /dashboard sayfasına git
+      navigate("/dashboard");
+    }
+  };
   return (
     <header className="bg-gradient-to-r from-rose-100 to-teal-100">
       <div className=" mx-auto  px-10 py-2 flex justify-between items-center">
         {/* logo */}
         <div
           className="flex cursor-pointer items-center gap-5 flex-shrink-0"
-          onClick={() => navigate("/dashboard")}
+          onClick={() => handleLogoClick()}
         >
           <img className="h-10 md:h-12" src={nav} alt="" />
           <div className="flex flex-col ">
