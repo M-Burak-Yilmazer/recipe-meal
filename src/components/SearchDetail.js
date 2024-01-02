@@ -7,7 +7,7 @@ const SearchDetail = ({ item }) => {
     <div className="cursor-pointer rounded overflow-hidden w-[300px] h-[450px] shadow-lg flex flex-col bg-orange-200">
       <div
         className="relative"
-        onClick={() => navigate("/recipe", { state: { from: item } })}
+        onClick={() => navigate("/dashboard/recipe", { state: { from: item } })}
       >
         <img
           className="w-full "

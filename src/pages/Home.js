@@ -1,27 +1,30 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import SearchDetail from "../components/SearchDetail";
-import "./Home.css"
+import "./Home.css";
 
 const Home = () => {
+  const inputRef = useRef();
   const [select, setSelect] = useState("");
   const [search, setSearch] = useState("");
   const [data, setData] = useState([]);
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(search, select);
+
     getRecipe();
   };
+  console.log(inputRef);
 
   const apiKey = "2e43178cb3e20d2b429690dfb240ec95";
   const applicationId = "59b63c92";
 
   const getRecipe = async () => {
     try {
-      const response = await axios.get(
+      const response = await axios(
         `https://api.edamam.com/search?q=${search}&app_id=${applicationId}&app_key=${apiKey}&mealType=${select}`
       );
       setData(response.data.hits);
+      console.log(select);
     } catch (error) {
       console.log(error);
     }
@@ -51,12 +54,18 @@ const Home = () => {
           <div className=" w-full outline  outline-4   outline-offset-[7px] rounded outline-orange-600   flex gap-2">
             <select
               value={select}
+              ref={inputRef}
               onChange={(e) => setSelect(e.target.value)}
               id="countries"
               className="bg-orange-600  text-white  font-semibold text-sm rounded-lg focus:bg-orange-500 focus:border-orange-500  block  p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-orange-600 dark:focus:border-orange-600 "
             >
-              <option value="breakfast">Breakfast</option>
-              <option value="Lunch">Lunch</option>
+              <option disabled value="">
+                Select a Meal/Type
+              </option>
+              <option value="Breakfast">Breakfast</option>
+              <option selected value="Lunch">
+                Lunch
+              </option>
               <option value="Brunch">Brunch</option>
               <option value="Dinner">Dinner</option>
               <option value="Teatime">Teatime</option>

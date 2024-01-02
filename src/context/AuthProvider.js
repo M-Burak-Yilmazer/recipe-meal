@@ -43,8 +43,9 @@ const AuthProvider = ({ children }) => {
       await updateProfile(auth.currentUser, {
         displayName: displayName,
       });
+      userObserver();
       // console.log(userCredential);
-      navigate("/");
+      navigate("/dashboard");
     } catch (error) {
       console.log(error);
     }
@@ -62,7 +63,7 @@ const AuthProvider = ({ children }) => {
         password
       );
       // console.log(userCredential);
-      navigate("/");
+      navigate("/dashboard");
     } catch (error) {
       console.log(error);
     }
@@ -102,7 +103,7 @@ const AuthProvider = ({ children }) => {
     signInWithPopup(auth, provider)
       .then((result) => {
         // console.log(result);
-        navigate("/");
+        navigate("/dashboard");
       })
       .catch((error) => {
         // Handle Errors here.

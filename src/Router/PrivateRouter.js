@@ -1,11 +1,12 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Outlet } from "react-router-dom";
 import Welcome from "../pages/Welcome/Welcome";
 import Navbar from "../components/Navbar/Navbar";
+import { AuthContext } from "../context/AuthProvider";
 
 const PrivateRouter = () => {
-  const [state, setState] = useState(true);
-  return state ? (
+  const { currentUser } = useContext(AuthContext);
+  return currentUser ? (
     <div>
       <Navbar />
       <Outlet />
